@@ -48,7 +48,7 @@ Find optimized routes from **any location to any location** in Kochi, not just m
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/kochi-metro-optimizer.git
+git clone https://github.com/Amrutha-M05/kochi_route_planner
 cd kochi-metro-optimizer
 
 # 2. Install dependencies (if any)
@@ -56,13 +56,16 @@ pip install -r requirements.txt
 
 # 3. Run the application
 python dijkstra.py
+
+# 4. Run tests
+python performance_analysis.py
 ```
 
 ### GUI Usage
 
 ```bash
 # Run the graphical interface
-python metro_gui.py
+python planner_gui.py
 ```
 
 ---
@@ -105,12 +108,17 @@ Most Convenient Route: ₹85, 55.0 min
 4. **Compare Results**: See costs, times, and step-by-step directions
 
 ---
+![GUI Screenshot Placeholder](screenshots/main_interface.png)
+
+![GUI Screenshot Placeholder](screenshots/route_results.png)
+
+---
 
 ## 🧮 Algorithm Details
 
 ### Dijkstra's Algorithm with Multi-Criteria Optimization
 
-Our implementation enhances classical Dijkstra's algorithm with multi-criteria optimization:
+This implementation enhances classical Dijkstra's algorithm with multi-criteria optimization:
 
 ```python
 composite_distance = (
@@ -131,12 +139,12 @@ where cost_weight + time_weight + stops_weight = 1.0
 
 ### Optimization Strategies
 
-| Strategy | Cost Weight | Time Weight | Stops Weight | Use Case |
-|----------|-------------|-------------|--------------|----------|
-| **Cheapest** | 0.7 | 0.2 | 0.1 | Budget travelers |
-| **Fastest** | 0.1 | 0.7 | 0.2 | Time-sensitive users |
-| **Balanced** | 0.33 | 0.34 | 0.33 | General users |
-| **Convenient** | 0.2 | 0.2 | 0.6 | Prefer fewer transfers |
+| Strategy      | Cost Weight | Time Weight | Stops Weight | Use Case               |
+|---------------|-------------|-------------|--------------|------------------------|
+| **Cheapest**  | 0.7         | 0.2         | 0.1          | Budget travelers       |
+| **Fastest**   | 0.1         | 0.7         | 0.2          | Time-sensitive users   |
+| **Balanced**  | 0.33        | 0.34        | 0.33         | General users          |
+| **Convenient**| 0.2         | 0.2         | 0.6          | Prefer fewer transfers |
 
 ---
 
@@ -144,37 +152,17 @@ where cost_weight + time_weight + stops_weight = 1.0
 
 ```
 kochi-metro-optimizer/
-├── README.md                 # This file
-├── LICENSE                   # MIT License
+├── README.md                 # This file                  
 ├── requirements.txt          # Python dependencies
-├── dijkstra.py              # Main optimizer implementation
-├── metro_gui.py             # Tkinter GUI interface
+├── dijkstra.py               # Main optimizer implementation
+├── planner_gui.py            # Tkinter GUI interface
+├── performance_analysis.py   # tests
+│   
 │
-├── src/                     # Source code modules (organized)
-│   ├── core/               # Core algorithm implementation
-│   ├── gui/                # GUI components
-│   └── utils/              # Utility functions
-│
-├── data/                   # Data files
-│   ├── metro_stations.json # Metro network data
-│   └── locations.json      # Additional locations
-│
-├── tests/                  # Unit tests
-│   ├── test_optimizer.py
-│   └── test_network.py
-│
-├── docs/                   # Documentation
-│   ├── algorithm_explanation.md
-│   ├── user_guide.md
-│   └── api_reference.md
-│
-├── screenshots/            # GUI screenshots
-│   ├── main_interface.png
-│   └── route_results.png
-│
-└── examples/              # Usage examples
-    ├── basic_usage.py
-    └── custom_weights.py
+└──── screenshots/              # GUI screenshots
+        ├── main_interface.png
+        └── route_results.png
+
 ```
 
 ---
@@ -345,28 +333,7 @@ Contributions are welcome! Here's how you can help:
 4. **Push to the branch** (`git push origin feature/AmazingFeature`)
 5. **Open a Pull Request**
 
-### Development Setup
 
-```bash
-# Clone your fork
-git clone https://github.com/Amrutha-M05/kochi_route_planner/
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-pytest tests/
-
-# Run linting
-flake8 src/
-black src/
-```
-
-#
 ## 🗺️ Roadmap
 
 ### Phase 1 (Completed) ✅
@@ -376,21 +343,22 @@ black src/
 - [x] GUI development
 - [x] 42+ location coverage
 
-### Phase 2 (In Progress) 🚧
+### Future Phases
+### Phase 2  
 - [ ] Add 50+ more locations
 - [ ] Kochi Metro Phase 2 integration (Green & Red lines)
 - [ ] Zone-based accurate fare calculation
 - [ ] Export routes to PDF/image
 - [ ] Performance optimizations
 
-### Phase 3 (Planned) 📋
+### Phase 3  
 - [ ] Real-time data integration (KMRL API)
 - [ ] Mobile application (React Native)
 - [ ] Web interface (Flask/Django)
 - [ ] Visual map display
 - [ ] Crowdsourced delay reports
 
-### Phase 4 (Future) 🔮
+### Phase 4 
 - [ ] Machine learning for demand prediction
 - [ ] Multi-city expansion (Delhi, Bangalore, Mumbai)
 - [ ] Google Maps API integration
@@ -410,24 +378,15 @@ black src/
 
 ## 📊 Project Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/kochi-metro-optimizer?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/kochi-metro-optimizer?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/kochi-metro-optimizer)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/kochi-metro-optimizer)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/kochi-metro-optimizer)
-![Code size](https://img.shields.io/github/languages/code-size/yourusername/kochi-metro-optimizer)
-
----
-
-## 📺 Demo
-
-![Demo GIF](screenshots/demo.gif)
-
-*Watch the optimizer in action - finding 4 different routes from Lulu Mall to Fort Kochi in under 50 milliseconds!*
+![GitHub stars](https://img.shields.io/github/stars/Amrutha-M05/kochi_route_planner?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Amrutha-M05/kochi_route_planner?style=social)
+![GitHub issues](https://img.shields.io/github/issues/Amrutha-M05/kochi_route_planner)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Amrutha-M05/kochi_route_planner)
+![GitHub last commit](https://img.shields.io/github/last-commit/Amrutha-M05/kochi_route_planner)
+![Code size](https://img.shields.io/github/languages/code-size/Amrutha-M05/kochi_route_planner)
 
 ---
 
 
----
 
 **Keywords:** Kochi Metro, Route Optimization, Dijkstra Algorithm, Multi-Modal Transportation, Graph Algorithms, Python, Tkinter, Urban Mobility, Smart Cities, Transportation Planning, Multi-Criteria Optimization

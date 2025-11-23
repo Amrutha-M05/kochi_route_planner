@@ -1,0 +1,15 @@
+folium
+
+
+# ============================================
+# CORE DEPENDENCIES (Required)
+# ============================================
+# Note: This project uses only Python standard library
+# tkinter comes built-in with Python on most systems
+
+# No external packages required for basic functionality!
+# The core optimizer uses only:
+# - heapq (standard library)
+# - collections (standard library)
+# - math (standard library)
+# - threading (standard library)
